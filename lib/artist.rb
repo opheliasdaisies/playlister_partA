@@ -24,4 +24,10 @@ class Artist
     ARTISTS
   end
 
+  def songs_count
+    song_num = 0
+    songs.each { |song| song_num += 1 }
+    song_num
+  end
+
 end
