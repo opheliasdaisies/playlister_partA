@@ -1,5 +1,5 @@
 class Artist
-  attr_accessor :name, :songs
+  attr_accessor :name, :songs, :genres
 
   ARTISTS = []
   @@artist_count = 0
@@ -33,11 +33,10 @@ class Artist
 
   def add_song(song)
     songs << song
-  end
-
-  def genres
     songs.each do |song|
-      genres << song.genre
+      unless genres.include?(song.genre)
+        genres << song.genre
+      end
     end
   end
 
