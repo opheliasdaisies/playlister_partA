@@ -1,4 +1,7 @@
-require "./spec_helper.rb"
+require "./spec_helper"
+require "./lib/artist"
+require "./lib/song"
+require "./lib/genre"
 
 describe "playlister" do
   it 'Can initialize an Artist' do
