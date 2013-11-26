@@ -6,7 +6,8 @@ class Artist
 
   def initialize
     @name
-    @songs
+    @songs = []
+    @genres = []
     @@artist_count += 1
     ARTISTS << self
   end
@@ -28,6 +29,16 @@ class Artist
     song_num = 0
     songs.each { |song| song_num += 1 }
     song_num
+  end
+
+  def add_song(song)
+    songs << song
+  end
+
+  def genres
+    songs.each do |song|
+      genres << song.genre
+    end
   end
 
 end
