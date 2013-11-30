@@ -31,11 +31,12 @@ class Artist
     song_num
   end
 
-  def add_song(song)
-    songs << song
-    songs.each do |song|
-      unless genres.include?(song.genre)
-        genres << song.genre
+  def add_song(new_song)
+    songs << new_song
+    songs.each do |song_item|
+      unless song_item.genre == nil
+        genres << song_item.genre unless genres.include?(song_item.genre)
+        song_item.genre.artists << self unless song_item.genre.artists.include?(self)
       end
     end
   end
